@@ -1,0 +1,2 @@
+Aprendendo C++
+Para compilar arquivos C++ use g++ [nome do arquivo] -o [o nome do arquivo como executavel]

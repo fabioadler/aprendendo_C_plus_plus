@@ -7,7 +7,7 @@ using namespace std;
 int main() {
 
     cout << "Contagem regreciva" << endl;
-    for(int c = 10; c >= 0; c -= 1){
+    for(int c = 10; c >= 0; c --){
         cout << "Contando: " << c << endl;
     }
     return 0;

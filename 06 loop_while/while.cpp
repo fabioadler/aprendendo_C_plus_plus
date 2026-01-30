@@ -6,6 +6,7 @@ using namespace std;
 
 int main() {
 
+    locale::global(locale(""));
     int num = 0;
     cout << "Contando de 0 a 100" << endl;
     while(num<=100){ //O while só precisa de uma condição para funcionar, enquanto for verdadeiro ele continua o loop

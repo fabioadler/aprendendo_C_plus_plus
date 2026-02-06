@@ -15,6 +15,7 @@ int main(){
     lista3[2] = 100;
     lista3[3] = 1000;
 
+    cout << "Printando um item de cada lista" << endl << "--> " << lista[0] << endl << "--> " << lista2[2] << endl << "--> " << lista3[1] << endl;
     cout << "Printando a primeira lista" << endl;
     for(int n: lista){
         cout << "]===> " << n << endl;

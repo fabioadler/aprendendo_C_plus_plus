@@ -2,8 +2,11 @@
 #include <stdlib.h>
 #include <locale>
 #include <string>
+#include <variant> //lib para poder colocar valores diversos na lista
+#include <vector> // lib para criar a lista com valores diferentes
 
 using namespace std;
+using var_l = variant<int,string>;
 
 int main(){
 
@@ -14,6 +17,7 @@ int main(){
     lista3[1] = 10;
     lista3[2] = 100;
     lista3[3] = 1000;
+    vector<var_l> lista4 = {1,"Hello",2,"ola"}; // lista com tipos de valores diferentes
 
     cout << "Printando um item de cada lista" << endl << "--> " << lista[0] << endl << "--> " << lista2[2] << endl << "--> " << lista3[1] << endl;
     cout << "Printando a primeira lista" << endl;
@@ -24,10 +28,19 @@ int main(){
     for(string v: lista2){
         cout << "]---> " << v << endl;
     }
-    cout << "Printando uma terceira lista" << endl;
+    cout << "Printando a terceira lista" << endl;
+    for(int v: lista3){
+        cout << "]---> " << v << endl;
+    }
+    cout << "Printando uma quarta lista de forma semelhante ao python" << endl;
     cout << "[";
-    for (int n: lista3){
-        cout << n << ", ";
+    for (auto item: lista4){ //Aqui no auto, usamos ele para atribuir um tipo de variavel automaticamente
+        if(holds_alternative<int>(item)){//Aqui verificamos o se o tipo da variavel e int
+            cout << get<int>(item) << ", ";// Aqui pegamos a variavel como int usando a funsão get
+        }
+        else if(holds_alternative<string>(item)){
+            cout << "'" << get<string>(item) << "', ";
+        }
     }
     cout << "]" << endl;
     return 0;

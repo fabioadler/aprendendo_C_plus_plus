@@ -4,7 +4,7 @@
 #include <string>
 #include <variant> //lib para poder colocar valores diversos na lista
 #include <vector> // lib para criar a lista com valores diferentes
-#include <algorithm>
+#include <algorithm> //lib para usar algumas funções que usei para criar a função de remover itens da lista
 
 using namespace std;
 using var_l = variant<int,string>;

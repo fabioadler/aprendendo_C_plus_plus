@@ -10,21 +10,21 @@ using namespace std;
 using var_l = variant<int,string>;
 
 vector<var_l> remover_item(vector<var_l> lista, var_l item_r){ // Função que eu criei para remover itens das listas especialmente da lista4
-    auto item = find_if(lista.begin(),lista.end(),[item_r](const var_l& v) {
-        if (holds_alternative<int>(item_r) && holds_alternative<int>(v)) {
-            return get<int>(v) == get<int>(item_r);
-        } else if (holds_alternative<string>(item_r) && holds_alternative<string>(v)) {
+    auto item = find_if(lista.begin(),lista.end(),[item_r](const var_l& v) { //Verifica se esse item existe dentro da lista e depois chama uma função lambda
+        if (holds_alternative<int>(item_r) && holds_alternative<int>(v)) { //Esse if dentro do lambda, verifica se o item e um int
+            return get<int>(v) == get<int>(item_r);// Caso seja inteiro, vai retornar o valor inteiro do item
+        } else if (holds_alternative<string>(item_r) && holds_alternative<string>(v)) {// verficia se e string
             return get<string>(v) == get<string>(item_r);
         }
-        return false;
+        return false;// caso o formato serja falso retorna um false
     });
-    if(item != lista.end()){
-        lista.erase(item);
+    if(item != lista.end()){//verifica se o item está na lista
+        lista.erase(item);//se tiver na lista remover
     }
     else {
         cout << "O item não foi encontrado" << endl;
     }
-    return lista;
+    return lista;//retorna uma lista nova no formato vetor<var_l>;
 };
 
 int main(){

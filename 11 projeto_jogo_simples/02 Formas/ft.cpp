@@ -10,11 +10,13 @@ int main(){
     locale::global(locale(""));
     sf::RenderWindow window(sf::VideoMode(800,500),"Formas e telas");
     sf::RectangleShape retangulo(sf::Vector2f(100.f,100.f));//criamos um retangulo e usamos a função Vector2f para definir a largura e altura
+    sf::CircleShape circulo(100.f);
     retangulo.setFillColor(sf::Color::Green);//Definimos uma cor para o retangulo
     retangulo.setPosition(//usamos o setPosition para determinar a posição do retangulo no eixo x e y
         (window.getSize().x / 2) - (retangulo.getSize().x / 2),//Fizemos o calculo para descobrir o centro do eixo x/2 menos o tamanho no eixo x/2 do retangulo, para ele ficar no centro
         (window.getSize().y / 2) - (retangulo.getSize().y / 2)//Fizemos o calculo para descobrir o centro do eixo y/2 menos o tamanho no eixo y/2 do retangulo, para ele ficar no centro
     );
+    circulo.setPosition(0,0);
     while(window.isOpen()){
         sf::Event evento;
         window.pollEvent(evento);
@@ -31,6 +33,7 @@ int main(){
         else{}
         window.clear();
         window.draw(retangulo);
+        window.draw(circulo);
         window.display();
     }
     return 0;

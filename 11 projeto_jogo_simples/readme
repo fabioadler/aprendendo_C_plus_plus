@@ -1,0 +1,7 @@
+Projeto de um jogo em c++
+
+Iremos precisar da lib sfml
+No windows pode ser baixada no site oficial
+No linux e só dar um: sudo apt install libsfml-dev -y
+
+Para compilar: g++ jogo.cpp -lsfml-graphics -lsfml-window -lsfml-system -o jogo

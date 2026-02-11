@@ -1,0 +1,8 @@
+O exemplo que eu usei e justamente os valores dos registradores são os que funcionam no linux, para o windows os valores são um pouco diferente por terem que interagir diretamente com o kernel do sistema, para saber mais sobre veja esse link: https://github.com/fabioadler/assembly
+
+Caso compilar normalmente não funcione
+Ex: 
+    g++ main.cpp -o main.o
+
+Tente:
+    g++ -masm=intel main.cpp -o main.o
